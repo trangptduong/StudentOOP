@@ -5,6 +5,6 @@ using namespace std;
 
 int sayHello() {
 	cout << "Hello World!" << endl;
-	// comment
+	// comment again
 	return 0;
 }
