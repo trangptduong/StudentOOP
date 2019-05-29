@@ -14,4 +14,3 @@ notifications:
 	  - gl1776@nyu.edu
     on_success: always
 
-   
