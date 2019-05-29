@@ -11,7 +11,7 @@ notifications:
   email:
     recipients:
       - tpd269@nyu.edu
-	  - glei1776@nyu.edu
+	  - gl1776@nyu.edu
     on_success: always
 
    
