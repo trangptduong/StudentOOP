@@ -6,7 +6,6 @@ compiler:
 script:
   - make tests
 
-
 notifications:
   email:
     recipients:
