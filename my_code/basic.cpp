@@ -9,13 +9,14 @@ using namespace std;
  * increment arg passed by copy
  * */
 void inc_pass_copy(int j) {
-	++j;
+	j++;  // this func increments j but not visibly to the outside world
 }
 
 /*
  * increment arg passed by reference
  * */
 void inc_pass_ref(int& j) {
+	j++;  // the variable itself is incremented and the output is now j = 9 from j = 8
 }
 
 /*
