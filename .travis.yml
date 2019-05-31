@@ -9,6 +9,6 @@ script:
 notifications:
   email:
     recipients:
-	  - tpd269@nyu.edu
+      - tpd269@nyu.edu
       - gl1776@nyu.edu  
     on_success: always
