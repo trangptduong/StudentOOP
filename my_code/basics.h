@@ -1,4 +1,5 @@
 # include <string>
+# include <vector>
 
 struct coord {
 	int x = 0;
