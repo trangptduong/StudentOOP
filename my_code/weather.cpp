@@ -26,6 +26,7 @@ int Weather::get_rating() const {
 void Weather::set_rating(int new_rating) {
 	rating = new_rating;
 }
+
 ostream& operator<<(ostream& os, const Weather& w) {
 	// w.set_rating(47);
 	os << w.get_name() << ": rating " << w.get_rating() << " " << w.my_loc;
