@@ -1,5 +1,4 @@
 # include <string>
-# include <vector>
 
 struct coord {
 	int x = 0;
@@ -18,4 +17,3 @@ int sum(int n);
 int sum2(int n);
 void pull_apart_string(std::string s);
 void say(std::string s);
-
