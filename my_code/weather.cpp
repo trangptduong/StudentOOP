@@ -2,8 +2,6 @@
 # include <string>
 # include "weather.h"
 
-using namespace std;
-
 std::ostream& operator << (std::ostream& os, const GPS& gps) {
 	os << "latitude: " << gps.latitude << "; longitude: " << gps.longitude;
 	return os;
