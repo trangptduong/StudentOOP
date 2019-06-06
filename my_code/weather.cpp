@@ -1,18 +1,18 @@
-#include <iostream>
-#include <string>
-#include "weather.h"
+# include <iostream>
+# include <string>
+# include "weather.h"
 
 using namespace std;
 
 std::ostream& operator << (std::ostream& os, const GPS& gps) {
 	os << "latitude: " << gps.latitude << "; longitude: " << gps.longitude;
 	return os;
-
 }
+
 /*
  * A constructor for weather class.
  * */
-Weather::Weather(std::string nm, GPS loc) : station_nm (nm), my_loc(loc) {
+Weather::Weather(std::string nm, GPS loc) : station_nm(nm), my_loc(loc) {
 }
 
 string Weather::get_name() const {
