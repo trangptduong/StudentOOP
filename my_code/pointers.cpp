@@ -1,7 +1,6 @@
 # include <iostream>
 # include "pointers.h"
 
-using namespace std;
 
 /*
  * Increment n.
