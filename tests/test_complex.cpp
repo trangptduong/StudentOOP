@@ -9,9 +9,9 @@ const bool DEBUG = true;
 
 int main() {
 	cout << "Input a complex number:\n";
-	Complex c1{12, 13};
+	Complex c1{45, 69};
 	// get a complex from stdin:
-	cin >> c1;
+	/*cin >> c1;
 	if (!cin)
 	{
 		cerr << "Bad input format\n";
@@ -20,7 +20,7 @@ int main() {
 	if(DEBUG)
 	{
 		cout << "c1 = " << c1 << endl;
-	}
+	}*/
 
 	Complex c2{43.2, 58.9};
 	assert(c2.get_real() == 43.2);
@@ -47,6 +47,7 @@ int main() {
 	assert(postinc.get_real() == 2);
 	postinc--;
 	assert(postinc.get_real() == 1);
+
 	/*
 	* Test equality operator. If we take the `explicit` off of
 	* `bool()` in class definition, then this will fail as ambiguous:
@@ -56,6 +57,7 @@ int main() {
 		cout << "c4 == 1 is true\n";
 	else
 		cout << "c4 == 1 is false\n";
+
 	// test bool() operator:
 	if (c4) {
 		cout << "c4 is true\n";
