@@ -1,5 +1,6 @@
 ﻿# include <iostream>
 # include <string>
+# include <vector>
 # include "weather.h"
 
 using namespace std;
@@ -7,9 +8,8 @@ using namespace std;
 const double F_TO_C = 5 / 9;
 const double C_TO_F = 9 / 5;
 
-Image::Image(int w, int h, std::string flnm) : width(w), height(h)
+Image::Image(int w, int h, std::string flnm) : width(w), height(h), filename(flnm)
 {
-	filename = flnm;
 	image_buf = new char[image_sz()];
 }
 
@@ -44,30 +44,54 @@ void Image::copy_fields(const Image& img2) {
 	}
 }
 
-
 /*
  * Setting `display() = 0` here makes this an abstract
  * class that can't be implemented.
  * */
 string Image::display(std::string s) {
-	return "Displaying image " + s;
+	cout << "Displaying image " << s << endl;
+	return s;
 }
 
+string Gif::display(std::string s) {
+	cout << "Displaying Gif " << s << endl;
+	return s;
+}
+
+string Jpeg::display(std::string s) {
+	cout << "Displaying Jpeg " << s << endl;
+	return s;
+}
+
+string Png::display(string s) {
+	cout << "Displaying Png " << s << endl;
+	return s;
+}
+
+// This is the Date Constructor
 Date::Date(int d, int m, int y) {
+	if ((d < 1) || (d > 31)) throw(d);
+	if ((m < 1) || (m > 12)) throw(m);
+	if ((y < 1800) || (y > 2200)) throw(y);
+
 	day = d;
 	month = m;
 	year = y;
 }
 
-double WReading::get_tempF() {
+ostream& operator<<(ostream& os, const Date& date) {
+	os << date.month << "/" << date.day << "/" << date.year;
+	return os;
+}
+
+double WReading::get_tempF()const {
 	return (temperature * C_TO_F) + 32;
 }
 
-ostream& operator<<(ostream& os, const Date& date) {
-	os << date.month << "/" << date.day << "/" << date.year;
-	return os;	
+void WReading::display_image()const {
+	if (!image) cout << "No image for reading " << date << endl;
+	else image->display("from wreading");
 }
-
 
 /*
 * Output GPS coords.
@@ -106,6 +130,12 @@ void Weather::set_rating(int new_rating) {
 
 void Weather::add_reading(WReading wr) {
 	wreadings.push_back(wr);
+}
+
+void Weather::display_images()const {
+	for (WReading wr : wreadings) {
+		wr.display_image();
+	}
 }
 
 ostream& operator<<(ostream& os, const Weather& w) {
