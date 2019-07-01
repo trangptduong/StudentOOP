@@ -4,7 +4,7 @@
 using namespace std;
 
 void print_vector(const MyVec& v) {
-	for (int i : v) cout << i << " ";
+	for (int i = 0; i < v.size(); i++) cout << i << " ";
 	cout << endl;
 }
 
@@ -14,7 +14,7 @@ MyVec::MyVec() : sz(0) {
 }
 
 MyVec::MyVec(int sz, int val) : sz{sz} {
-	capacity = max(DEF_CAPACITY, sz * CAPACITY_MULT);  
+	capacity = max(DEF_CAPACITY, sz * CAPACITY_MULT);
 	data = new int[capacity];
 	for (size_t i = 0; i < sz; i++) data[i] = val;
 }
