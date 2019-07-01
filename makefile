@@ -45,7 +45,7 @@ test_stl: $(TEST_DIR)/test_stl
 $(TEST_DIR)/test_stl: $(TEST_DIR)/test_stl.cpp
 
 
-tests: test_hello test_basics test_pointers test_complex test_llist #test_vector 
+tests: test_hello test_basics test_pointers test_complex test_llist test_tvector #test_vector 
 	tests/test_hello
 	tests/test_basics
 	tests/test_pointers
