@@ -53,7 +53,6 @@ class MyVec {
 	int capacity;
 };
 
-
 void print_vector(const MyVec& v);
 
 bool operator==(MyVec& v1, MyVec& v2);
