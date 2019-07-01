@@ -1,13 +1,16 @@
 # include <cassert>
 # include <iostream>
+# include <string>
 # include "../my_code/vector.h"
 
 using namespace std;
+
 
 int copy_vector(MyVec v) {
 	MyVec local_v = v;
 	return local_v.size();
 }
+
 
 int main() {
 	MyVec v = MyVec();
